@@ -7,7 +7,7 @@
     </div>
 </div>
 
-##<a name="table">Contents</a>
+## <a name="table">Contents</a>
 
 1. [Brief](#brief)
 2. [Points to Note](#to-note)
