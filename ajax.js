@@ -30,22 +30,24 @@ function loadMoreProjects() {
 }
 
 $(document).ready(function() {
-	$('.cat-list-item').on('click', function() {
+	$('.cat-list-item').on('click', function(event) {
+		(event).preventDefault();
 		$('.cat-list-item').removeClass('active');
 		$(this).addClass('active');
 
+		var category =$(this).data('category');
+
 		$.ajax({
-			type: 'POST',
-			url: '/wp-admin/admin-ajax.php',
-			dataType: 'html',
+			type: "POST",
+			dataType: "html",
+			url:  ajax_projects.ajaxurl,
 			data: {
 				action: 'filter_projects',
-				category: $(this).data('slug'),
 				type: $(this).data('type'),
+				category: $(this).data('category'),
 			},
 			success: function(res) {
-				$('.project-container').html(res);
-				console.warn(res);
+				$('#projects').html(res);
 			},
 			error: function(result){
 				console.warn(result);

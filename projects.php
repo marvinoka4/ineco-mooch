@@ -73,6 +73,37 @@ $filter = get_sub_field('filter');
     margin: 0 10px 0 0;
   }
 
+  /*responsive*/
+  @media(max-width: 767px){
+    .cat-list{
+      width: 100%;
+    }
+    .cat-list-item{
+      font-size: 12px;
+    }
+    .sort-container{
+      width: 100%;
+      font-size: 12px;
+    }
+    select {
+      font-size: 11px;
+    }
+  }
+  @media(max-width: 574px){
+    .cat-list{
+      width: 100%;
+    }
+    .cat-list-item{
+      font-size: 12px;
+    }
+    .sort-container{
+      width: 100%;
+      font-size: 12px;
+    }
+    select {
+      font-size: 11px;
+    }
+  }
 
 </style>
 
@@ -89,7 +120,7 @@ $filter = get_sub_field('filter');
 
           foreach ($terms as $term) { ?>
             <li>
-              <a class="button cat-list-item" href="#!" data-slug="<?= $term->slug; ?>" data-filter-val="<?php echo esc_attr($term->slug); ?>" data-type="project"><?php echo esc_html($term->name); ?></a>
+              <a class="button cat-list-item" href="#!" data-slug="<?= $term->slug; ?>" data-category="<?= $term->term_id; ?>" data-type="project"><?php echo esc_html($term->name); ?></a>
             </li>
           <?php } ?>
       </ul>
@@ -114,8 +145,6 @@ $filter = get_sub_field('filter');
           'post_type' => 'project',
           'posts_per_page' => 6,
           'paged'				=>	1,
-          'orderby' => 'menu_order',
-          'order' => 'desc',
       ]);
       ?>
 
@@ -124,7 +153,7 @@ $filter = get_sub_field('filter');
           <?php
           while($projects->have_posts()) : $projects->the_post();
 
-          get_template_part('parts/project_list_item');
+          get_template_part('layouts/project_list_item');
 
           endwhile;
           ?>
@@ -167,81 +196,4 @@ $filter = get_sub_field('filter');
     });
   </script>
 
-
-
-
-<div>
-  <h1>Do Not Touch, Thanks</h1>
-</div>
-
-
-
-
-
-  <?php if ($filter) { ?>
-    <div class="filter">
-        <?php
-        $terms = get_terms(array(
-            'taxonomy'		=>	'project-category',
-            'hide_empty'	=>	false
-        ));
-
-        foreach ($terms as $term) { ?>
-          <a class="button" data-filter-val="<?php echo esc_attr($term->slug); ?>"><?php echo esc_html($term->name); ?></a>
-        <?php } ?>
-    </div>
-  <?php } ?>
-
-  <div id="projects">
-      <?php $posts = get_posts(array(
-          'post_type'			=>	'project',
-          'posts_per_page'	=>	6,
-          'paged'				=>	1
-      ));
-
-      foreach ($posts as $post) {
-          setup_postdata($post); ?>
-        <a href="<?php echo esc_url(get_the_permalink()); ?>" class="project">
-          <div class="background" style="background-image: url('<?php if (has_post_thumbnail()) { echo esc_url(get_the_post_thumbnail_url()); } else { echo '/wp-content/uploads/2024/04/CTA-Graphic.png'; } ?>');"></div>
-          <div class="inside">
-            <h3><?php echo esc_html(get_the_title()); ?></h3>
-
-            <p class="cat">
-                <?php $termList = get_the_terms($post->ID, 'project-category');
-                $termPluckList = wp_list_pluck($termList, 'name');
-                $termJoined = join(', ', $termPluckList);
-                echo $termJoined; ?>
-            </p>
-          </div>
-          <div class="hover">
-            <div class="second-background"></div>
-              <?php
-              $stat1 = get_field('stat_1', $post->ID);
-              $stat2 = get_field('stat_2', $post->ID);
-              $stat3 = get_field('stat_3', $post->ID);
-
-              $stat1Val = $stat1['prefix_suffix']['prefix'] . $stat1['stat_value'] . $stat1['prefix_suffix']['suffix'];
-              $stat2Val = $stat2['prefix_suffix']['prefix'] . $stat2['stat_value'] . $stat2['prefix_suffix']['suffix'];
-              $stat3Val = $stat3['prefix_suffix']['prefix'] . $stat3['stat_value'] . $stat3['prefix_suffix']['suffix'];
-              ?>
-            <div class="stat">
-              <p class="stat-title"><?php echo $stat1['stat_name']; ?></p>
-              <p class="stat-val"><?php echo $stat1Val; ?></p>
-            </div>
-            <div class="stat">
-              <p class="stat-title"><?php echo $stat2['stat_name']; ?></p>
-              <p class="stat-val"><?php echo $stat2Val; ?></p>
-            </div>
-            <div class="stat">
-              <p class="stat-title"><?php echo $stat3['stat_name']; ?></p>
-              <p class="stat-val"><?php echo $stat3Val; ?></p>
-            </div>
-          </div>
-        </a>
-      <?php } wp_reset_postdata(); ?>
-  </div>
-
-  <a id="load-more-projects" class="button hover-effect">Load More
-    <div class="hover"></div>
-  </a>
 </div>

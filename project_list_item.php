@@ -5,10 +5,12 @@
         <h3><?php echo esc_html(get_the_title()); ?></h3>
 
         <p class="cat">
-            <?php $termList = get_the_terms($post->ID, 'project-category');
+            <?php
+            $termList = get_the_terms($post->ID, 'project-category');
             $termPluckList = wp_list_pluck($termList, 'name');
             $termJoined = join(', ', $termPluckList);
-            echo $termJoined; ?>
+            echo $termJoined;
+            ?>
         </p>
     </div>
     <div class="hover">

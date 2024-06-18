@@ -26,15 +26,15 @@
     z-index:99;
     width: 100%;
     position: absolute;
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: top left, 50%, 50%;
-    background-image: url('/wp-content/uploads/2024/04/Ineco-Icon-Black.svg');
+    background-image: url('/wp-content/uploads/2024/06/Ineco-Black-Cropped.svg');
   }
   .overlay-image{
     width: 100%;
     height: 100%;
-    background-color: rgba(225, 243, 246, 0.98);
+    background-color: rgba(225, 243, 246, 0.95);
   }
   .footer-div h2 {
     margin-top: 170px;
@@ -174,7 +174,6 @@
   .ineco-logo{
     width: 100%;
     height: 110px;
-    color: #2d636c;
     margin-top: 35px;
     background-size: contain;
     background-position: center;
@@ -193,12 +192,13 @@
     font-size: 12px;
     width: 25%;
     padding: 0 15px;
+    color: #7ea7a7;
   }
   .bottom a{
     font-size: 12px;
     text-transform: capitalize;
     text-decoration: none;
-    color: #2d636c;
+    color: #7ea7a7;
     display: block;
     width: 25%;
     padding: 0 15px;
@@ -225,6 +225,9 @@
     .newsletter .cf7-form > div input.wpcf7-submit {
       margin-top: 15px;
     }
+    .overlay {
+      background-position: bottom;
+    }
   }
   @media(max-width: 574px){
     .footer-col-left{
@@ -243,6 +246,9 @@
     }
     .newsletter .cf7-form > div input.wpcf7-submit {
       margin-top: 15px;
+    }
+    .overlay {
+      background-position: bottom;
     }
   }
 
