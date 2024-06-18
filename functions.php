@@ -168,7 +168,7 @@ function filter_projects() {
     $projects = new WP_Query($args);
 
     if($projects->have_posts()): while($projects->have_posts()) : $projects->the_post();
-    get_template_part('parts/project_list_item');
+    get_template_part('layouts/project_list_item');
     endwhile;
     wp_reset_postdata();
     else :
