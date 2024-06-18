@@ -3,7 +3,7 @@
   <h3 align="center">InEco Energy</h3>
 
    <div align="center">
-     Implementation of filter for custom post type - Project, and rebuilding the footer section.
+     Implement filter for custom post type - Project, and rebuild the footer section.
     </div>
 </div>
 
@@ -16,25 +16,25 @@
 
 ## <a name="brief">Task Brief</a>
 
-- Build a product filter that automatically fetches all the Project Categories (A custom taxonomy id: 'project-category') and lists them out as buttons.
-- When a button is clicked, the projects should be filtered by the category. Including any results retrieved via the ajax load more button.
-- Add a sort dropdown in the same style that can sort the currently filtered results including anything retrieved by the ajax load more. Include the usual sort options e.g. Sort by Newest, Sort by Oldest, Sort by Author, Sort by Name.
-- Build a responsive footer as per the design provided. 
+Build a product filter that automatically fetches all the Project Categories (a custom taxonomy id: 'project-category') and lists them as buttons.
+- When clicking a button, the projects should be filtered by category. This includes any results retrieved via the Ajax load more button.
+- Add a sorting dropdown in the same style to sort the currently filtered results, including anything retrieved by the Ajax "Load More". Include the usual sort options e.g. Sort by Newest, Sort by Oldest, Sort by Author, Sort by Name.
+- Build a responsive footer based on the design provided. 
 
 ## <a name="to-note">Points to Note</a>
 
-- I had to restructure some of the code to be able to implement functionality. I tried keeping it to a minimum, but in some cases it was unavoidable.
+- I had to restructure some of the code to be able to implement functionality. I tried keeping it to a minimum, but it was sometimes unavoidable.
 - I edited some of the graphics to suit the design more closely. I was able to call all of them from the media library. I updated both my local server and the staging server with these files.
-- The social icons do not match the design exactly, since they were being rendered from the WordPress backend. I had to use the icons from the media library and make them as close as possible to the website theme.
-- The "Load More" button doesn't retrieve filtered data, and the sort dropdown still needs some work. I should be able to get around it with a few more hours of work.
-- The "Load More" is particularly tricky because there is some functionality built around it and attempts to build on existing functionality haven't yielded just yet. I will continue to work on this and update the code as needed.
-- I am sorry that this wasn't absolutely ready by Monday as agreed. I would do better to access further projects and give a more accurate estimate of the time needed to complete it.
+- The social icons do not match the design since they were rendered from the WordPress backend. I had to use the icons from the media library and make them as close as possible to the website theme.
+- The "Load More" button doesn't retrieve filtered data, and the sort dropdown still needs work. With a few more hours of work, I should be able to work around it.
+- The "Load More" is particularly tricky because some functionality is built around it, and attempts to build on existing functionality haven't yielded results yet. I will continue to work on this and update the code as needed.
+- I am sorry that this wasn't ready by Monday as agreed. I would do better to access further projects and give a more accurate estimate of the time needed to complete them.
 
 ## <a name="snippets">Code Snippets</a>
 
-In the event that you'd prefer not to replace any of the existing files with the updated ones, here are core aspects of the code that I edited and that can be lifted and included in the codebase. Apart from the "load more" and sorting from the dropdown functionality, the rest of the code should work as expected.
+If you'd prefer not to replace any of the existing files with the updated ones, here are core aspects of the code that I edited and that can be lifted and included in the codebase. Apart from the "load more" and sorting from the dropdown functionality, the rest of the code should work as expected.
 
-If issues arise from including these files/ code snippets, I could take a look at it when no one is working on the staging server, pull down the most recent version, update it, test it and push it back to the server during inactive hours.
+If issues arise from including these files/ code snippets, I could review them when no one is working on the staging server, pull down the most recent version, update it, test it, and push it back to the server during inactive hours.
 
 <details>
 <summary><code>assets/js/ajax.js</code></summary>
