@@ -3,7 +3,7 @@
   <h3 align="center">InEco Energy</h3>
 
    <div align="center">
-     Implement filter for custom post type - Project, and rebuild the footer section.
+     Page Restructure and Social Sharing.
     </div>
 </div>
 
