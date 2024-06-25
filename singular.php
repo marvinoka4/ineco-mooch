@@ -16,6 +16,100 @@
   }
 
 
+  /* Extra small devices (phones, 600px and down) */
+  @media only screen and (max-width: 600px) {
+    .content {
+      order: 1;
+      padding-left: 30px !important;
+    }
+    .mid {
+      display: block !important;
+    }
+    .mid .content {
+      width: 100% !important;
+      padding-left: 0 !important;
+    }
+    .mid .right {
+      width: 100% !important;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      padding-left: 0 !important;
+    }
+    .box {
+      order: 2;
+      width: 80%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .box-left {
+      width: 35%;
+      text-align-last: center;
+    }
+    .box-right {
+      width: 55%;
+      padding-left: 30px;
+    }
+    .share-links {
+      order: 1;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 30px 0;
+    }
+  }
+
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+    .content {
+      order: 1;
+      padding-left: 30px !important;
+    }
+    .mid {
+      display: block !important;
+    }
+    .mid .content {
+      width: 100% !important;
+      padding-left: 0 !important;
+    }
+    .mid .right {
+      width: 100% !important;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      padding-left: 0 !important;
+    }
+    .box {
+      order: 2;
+      width: 90%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .box-left {
+      width: 30%;
+      text-align-last: center;
+    }
+    .box-right {
+      width: 60%;
+      padding-left: 30px;
+    }
+    .share-links {
+      order: 1;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 30px 0;
+    }
+
+  }
+
+
   /* Large devices (laptops/desktops, 1200px and up) */
   @media only screen and (min-width: 1200px) {
     .news-holder {
@@ -59,7 +153,7 @@
     }
     .box {
       order: 2;
-      width: 60%;
+      width: 60% !important;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -79,7 +173,6 @@
       justify-content: space-between;
       margin: 30px 0;
     }
-
   }
 </style>
 
@@ -209,7 +302,6 @@ if( get_post_type() == 'project' ) {
           <a class="share-text">Share to</a>
           <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo $link ?>&amp;title=<?php echo $newTitle ?>" target="_blank" rel="noopener"><i class="fa-classic fa-brands fa-linkedin share-media" aria-hidden="true"></i></a>
           <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()) ?>" target="_blank" rel="noopener"><i class="fa-classic fa-brands fa-square-facebook share-media" aria-hidden="true"></i></a>
-          <a href="#" target="_blank" rel="noopener"><i class="fa-classic fa-brands fa-instagram share-media" aria-hidden="true"></i></a>
           <a href="https://x.com/share?url=<?php echo $link ?>&amp;text=<?php echo $newTitle ?>" target="_blank" rel="noopener"><i class="fa-classic fa-brands fa-x-twitter share-media" aria-hidden="true"></i></a>
         </div>
 
